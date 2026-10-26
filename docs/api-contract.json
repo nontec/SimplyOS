@@ -1,6 +1,9 @@
 {
-  "apiVersion": "1.8",
+  "apiVersion": "1.9",
   "channel": "simplyos-app-api",
+  "backgroundServices": {
+    "vpn": {"appId": "ru.simplyos.vpn", "installSource": "official", "runtime": "systemd"}
+  },
   "methods": {
     "system.api.info": {"permission": null, "description": "Версия API и доступные приложению методы"},
     "system.status.read": {"permission": "system.status.read", "description": "Краткое состояние системы"},
@@ -13,6 +16,8 @@
     "clipboard.text.read": {"permission": "clipboard.read", "description": "Чтение текста из буфера обмена по действию пользователя"},
     "clipboard.text.write": {"permission": "clipboard.write", "description": "Запись текста в буфер обмена по действию пользователя"},
     "notifications.post": {"permission": "notifications.post", "description": "Уведомление в центре SimplyOS, в том числе из свёрнутого окна"},
+    "background.status": {"permission": "background.read", "requiresBackgroundService": true, "description": "Состояние собственной зарегистрированной фоновой службы приложения"},
+    "background.stop": {"permission": "background.control", "requiresBackgroundService": true, "description": "Остановка собственной фоновой службы после подтверждения пользователя"},
     "network.http.request": {"permission": "network.http", "description": "HTTP-запрос к домену из networkHosts приложения через системный посредник"},
     "network.http.private.request": {"permission": "network.http.private", "description": "Запрос к явно указанному серверу локальной сети"},
     "media.capture.open": {"permission": "media.capture", "description": "Запрос камеры и микрофона с подтверждением SimplyOS"},
