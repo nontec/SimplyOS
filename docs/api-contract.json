@@ -1,5 +1,5 @@
 {
-  "apiVersion": "1.9",
+  "apiVersion": "1.10",
   "channel": "simplyos-app-api",
   "backgroundServices": {
     "vpn": {"appId": "ru.simplyos.vpn", "installSource": "official", "runtime": "systemd"}
@@ -13,6 +13,8 @@
     "files.save": {"permission": "files.save", "description": "Сохранение документа в выбранное пользователем место"},
     "app.data.read": {"permission": "app.data.read", "description": "Чтение личных данных приложения"},
     "app.data.write": {"permission": "app.data.write", "description": "Запись личных данных приложения"},
+    "workspace.state.save": {"permission": "workspace.state", "description": "Сохранение несекретного состояния окна для переносимого рабочего пространства"},
+    "workspace.state.load": {"permission": "workspace.state", "description": "Восстановление состояния своего окна после открытия рабочего пространства"},
     "clipboard.text.read": {"permission": "clipboard.read", "description": "Чтение текста из буфера обмена по действию пользователя"},
     "clipboard.text.write": {"permission": "clipboard.write", "description": "Запись текста в буфер обмена по действию пользователя"},
     "notifications.post": {"permission": "notifications.post", "description": "Уведомление в центре SimplyOS, в том числе из свёрнутого окна"},
