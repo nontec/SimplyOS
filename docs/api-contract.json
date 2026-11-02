@@ -6,7 +6,7 @@
   },
   "methods": {
     "browser.open": {"permission": "browser.open", "description": "Открыть HTTPS-адрес во встроенном браузере"},
-    "itch.request": {"permission": "games.itch", "description": "Авторизация, поиск каталога, библиотека и установка HTML5-игр itch.io"},
+    "itch.request": {"permission": "games.itch", "description": "Витрина, обложки, авторизация, поиск каталога, библиотека и установка HTML5-игр itch.io"},
     "system.api.info": {"permission": null, "description": "Версия API и доступные приложению методы"},
     "system.status.read": {"permission": "system.status.read", "description": "Краткое состояние системы"},
     "system.hardware.read": {"permission": "system.hardware.read", "description": "Модель процессора и графики, объём оперативной памяти без идентификаторов устройства"},

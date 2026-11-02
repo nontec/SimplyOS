@@ -345,3 +345,28 @@ OAuth использует Client ID `573f87d4ef18a7a2d2246efab2ad02e2`, PKCE S2
 В Dev.86 `itch.request` также принимает `action: "search"`, `data: {query: "название", page: 1}`. Запрос (1–160 символов) отправляется backend на фиксированный `https://api.itch.io/search/games`, как в официальном клиенте go-itchio; страница — целое число 1–1000. Поиск требует входа в itch.io и охватывает опубликованные индексируемые проекты, а не только библиотеку пользователя или тег HTML5. Результат: `{games, page, perPage}`. В UI передаются только публичные поля карточек. Доступность скачивания и веб-сборок отдельно проверяет API itch.io; наличие в поиске не даёт право скачивания. Токен не передаётся интерфейсу. Маршрут и host не задаются приложением.
 
 Источник параметров поиска: официальный клиент itch.io, [SearchGames](https://github.com/itchio/go-itchio/blob/master/endpoints_search.go).
+
+
+Витрина itch.io — Dev.87 и приложение 1.1.0
+
+У `itch.request` добавлены действия:
+
+```javascript
+const shelf = await window.simplyos.request('itch.request', {
+  action: 'browse', data: {section: 'popular'}
+}); // {games, section, cached}
+const artwork = await window.simplyos.request('itch.request', {
+  action: 'cover', data: {url: shelf.games[0].cover_url}
+}); // {image: 'data:image/png;base64,...'}
+const project = await window.simplyos.request('itch.request', {
+  action: 'resolve', data: {url: shelf.games[0].url}
+}); // {id, title, short_text, url}
+```
+
+Подборки: `popular`, `new`, `free`, `top`, `puzzle`, `adventure`, `action`, `featured`. Источник — [публичные RSS-ленты itch.io](https://itch.io/docs/api/overview), а не фиксированный список игр. Для этих трёх действий не нужен вход в itch.io; требуется действующий сеанс SimplyOS, установленное официальное доверенное приложение `ru.simplyos.itch` и разрешение `games.itch`. Поиск, библиотека, список сборок и скачивание по-прежнему используют OAuth-токен и проверку доступа на стороне itch.io.
+
+`browse` принимает только имя фиксированной подборки. `cover` допускает только HTTPS на `img.itch.zone`, изображения PNG/JPEG/GIF/WebP до 400 КБ; SVG и переадресации отклоняются. Обложка передаётся как data URL без расширения CSP и сетевых прав iframe. `resolve` допускает только страницу вида `https://имя.itch.io/проект`, без произвольных портов, учётных данных и параметров. Он читает метаданные ID проекта; дальнейшее право скачивания определяет API itch.io. Токен не отправляется публичным лентам, страницам проектов или серверу обложек.
+
+Ленты ограничены 2 МБ; XML с DTD/ENTITY отклоняется, разметка описаний не исполняется. Метаданные кэшируются локально на 15 минут, обложки на сутки, ID страниц на час. При сетевой ошибке возвращается последняя доступная подборка с `cached: true`. Избранное сохраняется отдельным JSON-документом через существующие `app.data.read` / `app.data.write` в данных пользователя. Приложение запрашивает эти разрешения в манифесте.
+
+В `library` можно передать `data.page` (1–1000): запрашиваются страницы по 50 ключей, UI объединяет повторяющиеся проекты на одной странице. Доступны переходы вперёд и назад.
