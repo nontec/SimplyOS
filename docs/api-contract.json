@@ -1,11 +1,14 @@
 {
-  "apiVersion": "1.11",
+  "apiVersion": "1.12",
   "channel": "simplyos-app-api",
   "backgroundServices": {
-    "vpn": {"appId": "ru.simplyos.vpn", "installSource": "official", "runtime": "systemd"}
+    "vpn": {"appId": "ru.simplyos.vpn", "installSource": "official", "runtime": "systemd"},
+    "torrent": {"appId": "ru.simplyos.torrent", "installSource": "official", "runtime": "systemd"}
   },
   "methods": {
     "browser.open": {"permission": "browser.open", "description": "Открыть HTTPS-адрес во встроенном браузере"},
+    "remote.request": {"permission": "remote.desktop", "description": "Подключение по VNC к устройству в локальной сети и управление локальным сервером рабочего стола"},
+    "torrents.request": {"permission": "torrents.control", "description": "Управление личной локальной торрент-службой пользователя"},
     "itch.request": {"permission": "games.itch", "description": "Витрина, обложки, авторизация, поиск каталога, библиотека и установка HTML5-игр itch.io"},
     "system.api.info": {"permission": null, "description": "Версия API и доступные приложению методы"},
     "system.status.read": {"permission": "system.status.read", "description": "Краткое состояние системы"},
