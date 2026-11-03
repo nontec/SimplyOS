@@ -1,5 +1,5 @@
 {
-  "apiVersion": "1.12",
+  "apiVersion": "1.13",
   "channel": "simplyos-app-api",
   "backgroundServices": {
     "vpn": {
@@ -195,6 +195,14 @@
     "vpn.disconnect": {
       "permission": "network.vpn.control",
       "description": "Отключение VPN с подтверждением паролем Linux"
+    },
+    "autostart.get": {
+      "permission": "autostart.manage",
+      "description": "Проверить автозапуск собственного приложения"
+    },
+    "autostart.set": {
+      "permission": "autostart.manage",
+      "description": "Изменить автозапуск собственного приложения после подтверждения пользователя"
     }
   }
 }
