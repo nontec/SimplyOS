@@ -2,54 +2,199 @@
   "apiVersion": "1.12",
   "channel": "simplyos-app-api",
   "backgroundServices": {
-    "vpn": {"appId": "ru.simplyos.vpn", "installSource": "official", "runtime": "systemd"},
-    "torrent": {"appId": "ru.simplyos.torrent", "installSource": "official", "runtime": "systemd"}
+    "vpn": {
+      "appId": "ru.simplyos.vpn",
+      "installSource": "official",
+      "runtime": "systemd"
+    },
+    "torrent": {
+      "appId": "ru.simplyos.torrent",
+      "installSource": "official",
+      "runtime": "systemd"
+    }
   },
   "methods": {
-    "browser.open": {"permission": "browser.open", "description": "Открыть HTTPS-адрес во встроенном браузере"},
-    "remote.request": {"permission": "remote.desktop", "description": "Подключение по VNC к устройству в локальной сети и управление локальным сервером рабочего стола"},
-    "torrents.request": {"permission": "torrents.control", "description": "Управление личной локальной торрент-службой пользователя"},
-    "itch.request": {"permission": "games.itch", "description": "Витрина, обложки, авторизация, поиск каталога, библиотека и установка HTML5-игр itch.io"},
-    "system.api.info": {"permission": null, "description": "Версия API и доступные приложению методы"},
-    "system.status.read": {"permission": "system.status.read", "description": "Краткое состояние системы"},
-    "system.hardware.read": {"permission": "system.hardware.read", "description": "Модель процессора и графики, объём оперативной памяти без идентификаторов устройства"},
-    "system.locale.read": {"permission": "system.locale.read", "description": "Раскладки и текущий язык ввода"},
-    "files.open": {"permission": "files.open", "description": "Выбор и чтение файла пользователем"},
-    "files.save": {"permission": "files.save", "description": "Сохранение документа в выбранное пользователем место"},
-    "app.data.read": {"permission": "app.data.read", "description": "Чтение личных данных приложения"},
-    "app.data.write": {"permission": "app.data.write", "description": "Запись личных данных приложения"},
-    "workspace.state.save": {"permission": "workspace.state", "description": "Сохранение несекретного состояния окна для переносимого рабочего пространства"},
-    "workspace.state.load": {"permission": "workspace.state", "description": "Восстановление состояния своего окна после открытия рабочего пространства"},
-    "clipboard.text.read": {"permission": "clipboard.read", "description": "Чтение текста из буфера обмена по действию пользователя"},
-    "clipboard.text.write": {"permission": "clipboard.write", "description": "Запись текста в буфер обмена по действию пользователя"},
-    "notifications.post": {"permission": "notifications.post", "description": "Уведомление в центре SimplyOS, в том числе из свёрнутого окна"},
-    "background.status": {"permission": "background.read", "requiresBackgroundService": true, "description": "Состояние собственной зарегистрированной фоновой службы приложения"},
-    "background.stop": {"permission": "background.control", "requiresBackgroundService": true, "description": "Остановка собственной фоновой службы после подтверждения пользователя"},
-    "network.http.request": {"permission": "network.http", "description": "HTTP-запрос к домену из networkHosts приложения через системный посредник"},
-    "network.http.private.request": {"permission": "network.http.private", "description": "Запрос к явно указанному серверу локальной сети"},
-    "media.capture.open": {"permission": "media.capture", "description": "Запрос камеры и микрофона с подтверждением SimplyOS"},
-    "media.capture.answer": {"permission": "media.capture", "description": "Завершение локального подключения медиа-потока"},
-    "media.capture.close": {"permission": "media.capture", "description": "Закрытие медиа-потока"},
-    "devices.bluetooth.list": {"permission": "devices.bluetooth.read", "description": "Список обнаруженных Bluetooth-устройств"},
-    "devices.bluetooth.connect": {"permission": "devices.bluetooth.control", "description": "Подключение сопряжённого Bluetooth-устройства с подтверждением SimplyOS"},
-    "devices.bluetooth.disconnect": {"permission": "devices.bluetooth.control", "description": "Отключение Bluetooth-устройства с подтверждением SimplyOS"},
-    "devices.usb.list": {"permission": "devices.usb.read", "description": "Список подключённых USB-устройств"},
-    "mesh.devices.list": {"permission": "mesh.read", "description": "USB/COM-порты и обнаруженные Bluetooth-устройства для Meshtastic и MeshCore"},
-    "mesh.status": {"permission": "mesh.read", "description": "Состояние подключения к радиоустройству"},
-    "mesh.nodes": {"permission": "mesh.read", "description": "Узлы Meshtastic или контакты MeshCore"},
-    "mesh.messages": {"permission": "mesh.read", "description": "Входящие и исходящие сообщения текущего сеанса"},
-    "mesh.connect": {"permission": "mesh.control", "description": "Подключение по USB/COM, Bluetooth или локальному IP"},
-    "mesh.disconnect": {"permission": "mesh.control", "description": "Отключение радиоустройства"},
-    "mesh.send": {"permission": "mesh.control", "description": "Отправка текста узлу, контакту или в канал"},
-    "mesh.configure": {"permission": "mesh.control", "description": "Изменение ограниченного набора настроек радиоустройства"},
-    "printing.printers.list": {"permission": "printing.read", "description": "Список доступных принтеров и принтер по умолчанию"},
-    "printing.jobs.list": {"permission": "printing.read", "description": "Очередь заданий печати текущего пользователя"},
-    "printing.submit": {"permission": "printing.submit", "description": "Отправка PDF, изображения или текста на локальный принтер"},
-    "printing.jobs.cancel": {"permission": "printing.manage", "description": "Отмена собственного задания печати"},
-    "vpn.status": {"permission": "network.vpn.read", "description": "Состояние локального VPN-туннеля"},
-    "vpn.probe": {"permission": "network.vpn.read", "description": "Доступность и задержка TCP-подключения к VPN-серверу"},
-    "vpn.subscription.fetch": {"permission": "network.vpn.read", "description": "Загрузка VPN-подписки по HTTPS"},
-    "vpn.connect": {"permission": "network.vpn.control", "description": "Подключение VPN с подтверждением паролем Linux"},
-    "vpn.disconnect": {"permission": "network.vpn.control", "description": "Отключение VPN с подтверждением паролем Linux"}
+    "browser.open": {
+      "permission": "browser.open",
+      "description": "Открыть HTTPS-адрес во встроенном браузере"
+    },
+    "remote.request": {
+      "permission": "remote.desktop",
+      "description": "Подключение по VNC к устройству в локальной сети и управление локальным сервером рабочего стола"
+    },
+    "torrents.request": {
+      "permission": "torrents.control",
+      "description": "Управление личной локальной торрент-службой пользователя"
+    },
+    "itch.request": {
+      "permission": "games.itch",
+      "description": "Витрина, обложки, авторизация, поиск каталога, библиотека и установка HTML5-игр itch.io"
+    },
+    "system.api.info": {
+      "permission": null,
+      "description": "Версия API и доступные приложению методы"
+    },
+    "system.status.read": {
+      "permission": "system.status.read",
+      "description": "Краткое состояние системы"
+    },
+    "system.hardware.read": {
+      "permission": "system.hardware.read",
+      "description": "Модель процессора и графики, объём оперативной памяти без идентификаторов устройства"
+    },
+    "system.locale.read": {
+      "permission": "system.locale.read",
+      "description": "Раскладки и текущий язык ввода"
+    },
+    "files.open": {
+      "permission": "files.open",
+      "description": "Выбор и чтение файла пользователем"
+    },
+    "files.save": {
+      "permission": "files.save",
+      "description": "Сохранение документа в выбранное пользователем место"
+    },
+    "app.data.read": {
+      "permission": "app.data.read",
+      "description": "Чтение личных данных приложения"
+    },
+    "app.data.write": {
+      "permission": "app.data.write",
+      "description": "Запись личных данных приложения"
+    },
+    "workspace.state.save": {
+      "permission": "workspace.state",
+      "description": "Сохранение несекретного состояния окна для переносимого рабочего пространства"
+    },
+    "workspace.state.load": {
+      "permission": "workspace.state",
+      "description": "Восстановление состояния своего окна после открытия рабочего пространства"
+    },
+    "clipboard.text.read": {
+      "permission": "clipboard.read",
+      "description": "Чтение текста из буфера обмена по действию пользователя"
+    },
+    "clipboard.text.write": {
+      "permission": "clipboard.write",
+      "description": "Запись текста в буфер обмена по действию пользователя"
+    },
+    "notifications.post": {
+      "permission": "notifications.post",
+      "description": "Уведомление приложения: карточка в центре и всплывающее сообщение, в том числе из свёрнутого окна; системный тип недоступен приложениям"
+    },
+    "background.status": {
+      "permission": "background.read",
+      "requiresBackgroundService": true,
+      "description": "Состояние собственной зарегистрированной фоновой службы приложения"
+    },
+    "background.stop": {
+      "permission": "background.control",
+      "requiresBackgroundService": true,
+      "description": "Остановка собственной фоновой службы после подтверждения пользователя"
+    },
+    "network.http.request": {
+      "permission": "network.http",
+      "description": "HTTP-запрос к домену из networkHosts приложения через системный посредник"
+    },
+    "network.http.private.request": {
+      "permission": "network.http.private",
+      "description": "Запрос к явно указанному серверу локальной сети"
+    },
+    "media.capture.open": {
+      "permission": "media.capture",
+      "description": "Запрос камеры и микрофона с подтверждением SimplyOS"
+    },
+    "media.capture.answer": {
+      "permission": "media.capture",
+      "description": "Завершение локального подключения медиа-потока"
+    },
+    "media.capture.close": {
+      "permission": "media.capture",
+      "description": "Закрытие медиа-потока"
+    },
+    "devices.bluetooth.list": {
+      "permission": "devices.bluetooth.read",
+      "description": "Список обнаруженных Bluetooth-устройств"
+    },
+    "devices.bluetooth.connect": {
+      "permission": "devices.bluetooth.control",
+      "description": "Подключение сопряжённого Bluetooth-устройства с подтверждением SimplyOS"
+    },
+    "devices.bluetooth.disconnect": {
+      "permission": "devices.bluetooth.control",
+      "description": "Отключение Bluetooth-устройства с подтверждением SimplyOS"
+    },
+    "devices.usb.list": {
+      "permission": "devices.usb.read",
+      "description": "Список подключённых USB-устройств"
+    },
+    "mesh.devices.list": {
+      "permission": "mesh.read",
+      "description": "USB/COM-порты и обнаруженные Bluetooth-устройства для Meshtastic и MeshCore"
+    },
+    "mesh.status": {
+      "permission": "mesh.read",
+      "description": "Состояние подключения к радиоустройству"
+    },
+    "mesh.nodes": {
+      "permission": "mesh.read",
+      "description": "Узлы Meshtastic или контакты MeshCore"
+    },
+    "mesh.messages": {
+      "permission": "mesh.read",
+      "description": "Входящие и исходящие сообщения текущего сеанса"
+    },
+    "mesh.connect": {
+      "permission": "mesh.control",
+      "description": "Подключение по USB/COM, Bluetooth или локальному IP"
+    },
+    "mesh.disconnect": {
+      "permission": "mesh.control",
+      "description": "Отключение радиоустройства"
+    },
+    "mesh.send": {
+      "permission": "mesh.control",
+      "description": "Отправка текста узлу, контакту или в канал"
+    },
+    "mesh.configure": {
+      "permission": "mesh.control",
+      "description": "Изменение ограниченного набора настроек радиоустройства"
+    },
+    "printing.printers.list": {
+      "permission": "printing.read",
+      "description": "Список доступных принтеров и принтер по умолчанию"
+    },
+    "printing.jobs.list": {
+      "permission": "printing.read",
+      "description": "Очередь заданий печати текущего пользователя"
+    },
+    "printing.submit": {
+      "permission": "printing.submit",
+      "description": "Отправка PDF, изображения или текста на локальный принтер"
+    },
+    "printing.jobs.cancel": {
+      "permission": "printing.manage",
+      "description": "Отмена собственного задания печати"
+    },
+    "vpn.status": {
+      "permission": "network.vpn.read",
+      "description": "Состояние локального VPN-туннеля"
+    },
+    "vpn.probe": {
+      "permission": "network.vpn.read",
+      "description": "Доступность и задержка TCP-подключения к VPN-серверу"
+    },
+    "vpn.subscription.fetch": {
+      "permission": "network.vpn.read",
+      "description": "Загрузка VPN-подписки по HTTPS"
+    },
+    "vpn.connect": {
+      "permission": "network.vpn.control",
+      "description": "Подключение VPN с подтверждением паролем Linux"
+    },
+    "vpn.disconnect": {
+      "permission": "network.vpn.control",
+      "description": "Отключение VPN с подтверждением паролем Linux"
+    }
   }
 }
