@@ -73,11 +73,11 @@ Studio устанавливается из Магазина SimplyOS вмест�
 
 ## Скачать SDK отдельно
 
-[Архив SimplyOS SDK 0.2.0](https://updatesios.nontec.ru/store/sdk/simplyos-sdk-0.2.0.zip)
+[Архив SimplyOS SDK 0.2.0](https://simplyos.ru/market/sdk/simplyos-sdk-0.2.0.zip)
 
-[Расширение для Code OSS и совместимых редакторов](https://updatesios.nontec.ru/store/sdk/nontec.simplyos-sdk-0.2.0.vsix)
+[Расширение для Code OSS и совместимых редакторов](https://simplyos.ru/market/sdk/nontec.simplyos-sdk-0.2.0.vsix)
 
-[Контрольные суммы](https://updatesios.nontec.ru/store/sdk/SHA256SUMS-0.2.0), [подпись контрольных сумм](https://updatesios.nontec.ru/store/sdk/SHA256SUMS-0.2.0.sig), [открытый ключ обновлений](update-signing-public.pem).
+[Контрольные суммы](https://simplyos.ru/market/sdk/SHA256SUMS-0.2.0), [подпись контрольных сумм](https://simplyos.ru/market/sdk/SHA256SUMS-0.2.0.sig), [открытый ключ обновлений](update-signing-public.pem).
 
 Сохраните оба файла контрольных сумм, открытый ключ и нужные архивы. Проверьте подпись и суммы:
 
@@ -89,3 +89,5 @@ sha256sum -c SHA256SUMS-0.2.0
 Открытый ключ проверяет подпись и не позволяет подписывать новые пакеты. Он отличается от ключа подписи ISO.
 
 [Универсальные API устройств и сети](UNIVERSAL-IO.md).
+
+Резервный сервер SDK: `https://updatesios.nontec.ru/store/sdk/`. [Серверы и зеркала](DISTRIBUTION-MIRRORS.md).
