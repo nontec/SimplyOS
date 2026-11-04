@@ -1,5 +1,5 @@
 {
-  "apiVersion": "1.13",
+  "apiVersion": "1.14",
   "channel": "simplyos-app-api",
   "backgroundServices": {
     "vpn": {
@@ -203,6 +203,19 @@
     "autostart.set": {
       "permission": "autostart.manage",
       "description": "Изменить автозапуск собственного приложения после подтверждения пользователя"
+    },
+    "services.call": {
+      "permission": "services.python",
+      "description": "Вызов Python-службы собственного официального приложения. Выполнение кода с правами пользователя требует отдельного согласия.",
+      "officialOnly": true,
+      "executionPrivilege": "user"
+    },
+    "studio.open": {
+      "permission": "development.tools",
+      "description": "Открытие локальной среды разработки. Только официальный SimplyOS Studio.",
+      "officialOnly": true,
+      "appId": "ru.simplyos.studio",
+      "executionPrivilege": "user"
     }
   }
 }
