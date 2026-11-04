@@ -4,7 +4,7 @@
   "id": "ru.simplyos.mesh",
   "name": "Mesh Радио",
   "developer": "Карпухин Егор Константинович",
-  "appVersion": "2.0.0",
+  "appVersion": "2.0.1",
   "entry": "index.html",
   "icon": "icons/app.svg",
   "permissions": [

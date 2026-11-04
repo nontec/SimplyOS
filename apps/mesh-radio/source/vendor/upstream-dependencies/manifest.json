@@ -1,0 +1,58 @@
+[
+  {
+    "name": "@bufbuild/protobuf",
+    "version": "2.2.5",
+    "repository": "https://github.com/bufbuild/protobuf-es",
+    "commit": "b44bcfdcf5f86ea9569c651cbd0c0f49ada91c44",
+    "directory": "protobuf-es-b44bcfdcf5f8",
+    "archiveSha256": "0c7c95a4ec36596c79277fd136f3e3870eabd75285057281f648b3045cc8f3b7"
+  },
+  {
+    "name": "@noble/curves",
+    "version": "1.9.7",
+    "repository": "https://github.com/paulmillr/noble-curves",
+    "commit": "a0ac59846ee76c52f7c18886f4963e1211345d48",
+    "directory": "noble-curves-a0ac59846ee7",
+    "archiveSha256": "ea8eee99e70e0bf65ded4f6be8c9f4c7efcbb12ce39143351bba55e862903f5d"
+  },
+  {
+    "name": "@noble/hashes",
+    "version": "1.8.0",
+    "repository": "https://github.com/paulmillr/noble-hashes",
+    "commit": "32f700f38ec49d7e6b2ab687904d6b2d7d60d80a",
+    "directory": "noble-hashes-32f700f38ec4",
+    "archiveSha256": "0d5aedc3b7c40683dc7cdd37b9ec959d1ba0d28514a3bb8cebaac4e4b17ca581"
+  },
+  {
+    "name": "crc",
+    "version": "4.3.2",
+    "repository": "https://github.com/alexgorbatchev/crc",
+    "commit": "31fc3853e417b5fb5ec83335428805842575f699",
+    "directory": "crc-31fc3853e417",
+    "archiveSha256": "90af0dd137a2aa83b44fcdaa6fbc49ac231336e2cf5da27950b1460484b3e97c"
+  },
+  {
+    "name": "ste-core",
+    "version": "3.0.11",
+    "repository": "https://github.com/KeesCBakker/Strongly-Typed-Events-for-TypeScript",
+    "commit": "0771a18e4be333041ca0ab2ffd8ea7cd1c890263",
+    "directory": "Strongly-Typed-Events-for-TypeScript-0771a18e4be3",
+    "archiveSha256": "f0e8d9bbb765b0194fa612e74aa75bd1bfd702c7c65fd0a23534cfa2a3ecf841"
+  },
+  {
+    "name": "ste-simple-events",
+    "version": "3.0.11",
+    "repository": "https://github.com/KeesCBakker/Strongly-Typed-Events-for-TypeScript",
+    "commit": "0771a18e4be333041ca0ab2ffd8ea7cd1c890263",
+    "directory": "Strongly-Typed-Events-for-TypeScript-0771a18e4be3",
+    "archiveSha256": "f0e8d9bbb765b0194fa612e74aa75bd1bfd702c7c65fd0a23534cfa2a3ecf841"
+  },
+  {
+    "name": "tslog",
+    "version": "4.9.3",
+    "repository": "https://github.com/fullstack-build/tslog",
+    "commit": "c4e6eadc85ed79763792fb8a3049e2d50c88b2dc",
+    "directory": "tslog-c4e6eadc85ed",
+    "archiveSha256": "6bb4a3bb3562daa84be7a4b1a1978d554d39429fd83e7e6e4fac27ba55c6b7f6"
+  }
+]

@@ -1,0 +1,36 @@
+{
+  "name": "crc",
+  "private": "true",
+  "scripts": {
+    "lint": "eslint src/{,**/}*.ts test/{,**/}*.ts",
+    "test": "./scripts/test",
+    "build": "./scripts/build",
+    "benchmark": "./scripts/benchmark"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.4",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.11.15",
+    "@types/prettier": "^2.7.1",
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "@typescript-eslint/parser": "^5.46.1",
+    "beautify-benchmark": "^0.2.4",
+    "benchmark": "^2.1.4",
+    "buffer-crc32": "^0.2.13",
+    "buffer": "^6.0.3",
+    "chai": "^4.3.7",
+    "eslint": "^8.29.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-typescript": "^3.0.0",
+    "eslint-formatter-pretty": "^4.1.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-no-only-tests": "^3.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "mocha": "^10.2.0",
+    "prettier": "^2.8.1",
+    "seedrandom": "^3.0.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4"
+  }
+}

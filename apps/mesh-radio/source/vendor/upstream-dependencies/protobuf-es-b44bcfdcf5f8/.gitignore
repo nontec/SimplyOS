@@ -1,0 +1,7 @@
+.tmp
+.turbo
+dist
+node_modules
+/packages/protobuf-test/*.0x
+/packages/protobuf-test/*-v8.log
+/packages/protobuf-example/users.binpb

@@ -1,0 +1,9 @@
+{
+  "files": ["src/add.ts", "src/list.ts"],
+  "compilerOptions": {
+    "target": "es2017",
+    "moduleResolution": "Node10",
+    "strict": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}

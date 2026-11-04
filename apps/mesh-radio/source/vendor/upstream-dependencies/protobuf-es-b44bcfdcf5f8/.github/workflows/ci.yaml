@@ -1,0 +1,141 @@
+name: ci
+on:
+  push:
+    branches: [main, "v*"]
+    tags: ["v*"]
+  pull_request:
+    branches: [main, "v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  # https://consoledonottrack.com/
+  DO_NOT_TRACK: 1
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+        bigint-disable: [0, 1]
+    name: test ${{ matrix.node-version }} (${{ matrix.bigint-disable && 'fallback' || 'bigint' }})
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: .turbo
+          key: protobuf-es/test/${{ github.sha }}
+          restore-keys: protobuf-es/test
+      - run: npm ci
+      - run: npx turbo run test -F '!./packages/protobuf-conformance' -F '!./packages/typescript-compat/*'
+        env:
+          BUF_BIGINT_DISABLE: ${{ matrix.bigint-disable }}
+  conformance:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+        bigint-disable: [0, 1]
+    name: conformance ${{ matrix.node-version }} (${{ matrix.bigint-disable && 'fallback' || 'bigint' }})
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: .turbo
+          key: protobuf-es/conformance/${{ github.sha }}
+          restore-keys: protobuf-es/conformance
+      - run: npm ci
+      - run: npx turbo run test -F './packages/protobuf-conformance'
+        env:
+          BUF_BIGINT_DISABLE: ${{ matrix.bigint-disable }}
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: .turbo
+          key: protobuf-es/lint/${{ github.sha }}
+          restore-keys: protobuf-es/lint
+      - run: npm ci
+      - run: npx turbo run lint
+  attw:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: .turbo
+          key: protobuf-es/attw/${{ github.sha }}
+          restore-keys: protobuf-es/attw
+      - run: npm ci
+      - run: npx turbo run attw
+  typescript-compat:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: .turbo
+          key: protobuf-es/typescript-compat/${{ github.sha }}
+          restore-keys: protobuf-es/typescript-compat
+      - run: npm ci
+      - run: npx turbo run test -F './packages/typescript-compat/*'
+  license-header:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: .turbo
+          key: protobuf-es/license-header/${{ github.sha }}
+          restore-keys: protobuf-es/license-header
+      - run: npm ci
+      - run: npx turbo run license-header
+      - run: node scripts/gh-diffcheck.js
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: .turbo
+          key: protobuf-es/format/${{ github.sha }}
+          restore-keys: protobuf-es/format
+      - run: npm ci
+      - run: npx turbo run format
+      - run: node scripts/gh-diffcheck.js
+  bundle-size:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: .turbo
+          key: protobuf-es/bundle-size/${{ github.sha }}
+          restore-keys: protobuf-es/bundle-size
+      - run: npm ci
+      - run: npx turbo run bundle-size
+      - run: node scripts/gh-diffcheck.js
+  bootstrap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: .turbo
+          key: protobuf-es/bootstrap/${{ github.sha }}
+          restore-keys: protobuf-es/bootstrap
+      - run: npm ci
+      - name: Bootstrap well-known types
+        run: npx turbo run bootstrap:inject bootstrap:wkt
+      - run: node scripts/gh-diffcheck.js

@@ -1,0 +1,29 @@
+{
+  "name": "upstream-protobuf",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node bin/upstream-warmup.mjs"
+  },
+  "bin": {
+    "protoc": "bin/protoc.mjs",
+    "protoc-gen-dumpcodegenreq": "bin/protoc-gen-dumpcodegenreq.mjs",
+    "conformance_test_runner": "bin/conformance_test_runner.mjs",
+    "upstream-files": "bin/upstream-files.mjs",
+    "upstream-include": "bin/upstream-include.mjs",
+    "upstream-warmup": "bin/upstream-warmup.mjs",
+    "format": "prettier --write --ignore-unknown '.' '!.tmp'",
+    "license-header": "license-header",
+    "lint": "eslint --max-warnings 0 ."
+  },
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "types": "./index.d.ts"
+    }
+  },
+  "dependencies": {
+    "fflate": "^0.8.1",
+    "micromatch": "^4.0.8"
+  }
+}

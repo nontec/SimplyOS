@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="820px" height="330px" viewBox="0 0 820 340" class="chart">
+    <style>
+      <![CDATA[
+      text {
+        font: 14px Verdana, Helvetica, Arial, sans-serif;
+      }
+      ]]>
+    </style>
+    <g transform="translate(110,310)">
+      <line y1="0" x2="700" stroke="black" />
+      <text x="0" y="18" text-anchor="start">1 file</text>
+<text x="140" y="18" text-anchor="start">4 files</text>
+<text x="280" y="18" text-anchor="start">8 files</text>
+<text x="420" y="18" text-anchor="start">16 files</text>
+<text x="560" y="18" text-anchor="start">32 files</text>
+    </g><g transform="translate(110, 20)" >
+      <line x1="0" x2="0" y1="0" y2="290" stroke="black" />
+      <g transform="rotate(-90), translate(-150,-85)">
+        <text text-anchor="middle">Bundle size - minified and compressed</text>
+      </g>
+    <text x="-10" y="4" text-anchor="end">100 KiB</text>
+<line x1="0" x2="700" y1="0" y2="0" stroke="#ebebeb" />
+<text x="-10" y="33" text-anchor="end">90 KiB</text>
+<line x1="0" x2="700" y1="29" y2="29" stroke="#ebebeb" />
+<text x="-10" y="62" text-anchor="end">80 KiB</text>
+<line x1="0" x2="700" y1="58" y2="58" stroke="#ebebeb" />
+<text x="-10" y="91" text-anchor="end">70 KiB</text>
+<line x1="0" x2="700" y1="87" y2="87" stroke="#ebebeb" />
+<text x="-10" y="120" text-anchor="end">60 KiB</text>
+<line x1="0" x2="700" y1="116" y2="116" stroke="#ebebeb" />
+<text x="-10" y="149" text-anchor="end">50 KiB</text>
+<line x1="0" x2="700" y1="145" y2="145" stroke="#ebebeb" />
+<text x="-10" y="178" text-anchor="end">40 KiB</text>
+<line x1="0" x2="700" y1="174" y2="174" stroke="#ebebeb" />
+<text x="-10" y="207" text-anchor="end">30 KiB</text>
+<line x1="0" x2="700" y1="203" y2="203" stroke="#ebebeb" />
+<text x="-10" y="236" text-anchor="end">20 KiB</text>
+<line x1="0" x2="700" y1="232" y2="232" stroke="#ebebeb" />
+<text x="-10" y="265" text-anchor="end">10 KiB</text>
+<line x1="0" x2="700" y1="261" y2="261" stroke="#ebebeb" />
+<text x="-10" y="294" text-anchor="end">0 KiB</text>
+</g>
+<g transform="translate(110, 20)">
+  <polyline fill="none" stroke="#ffa600" stroke-width="2" points="0,246.21396484375 140,244.313671875 280,242.85234375 420,236.23955078125 560,220.64921875">
+    <title>Protobuf-ES</title>
+  </polyline>
+<circle cx="0" cy="246.21396484375" r="4" fill="#ffa600"><title>Protobuf-ES 15.1 KiB for 1 files</title></circle>
+<circle cx="140" cy="244.313671875" r="4" fill="#ffa600"><title>Protobuf-ES 15.75 KiB for 4 files</title></circle>
+<circle cx="280" cy="242.85234375" r="4" fill="#ffa600"><title>Protobuf-ES 16.26 KiB for 8 files</title></circle>
+<circle cx="420" cy="236.23955078125" r="4" fill="#ffa600"><title>Protobuf-ES 18.54 KiB for 16 files</title></circle>
+<circle cx="560" cy="220.64921875" r="4" fill="#ffa600"><title>Protobuf-ES 23.91 KiB for 32 files</title></circle>
+</g>
+<g transform="translate(110, 20)">
+  <polyline fill="none" stroke="#ff6361" stroke-width="2" points="0,245.990234375 140,241.980078125 280,238.6326171875 420,217.896484375 560,134.51015625000002">
+    <title>protobuf-javascript</title>
+  </polyline>
+<circle cx="0" cy="245.990234375" r="4" fill="#ff6361"><title>protobuf-javascript 15.18 KiB for 1 files</title></circle>
+<circle cx="140" cy="241.980078125" r="4" fill="#ff6361"><title>protobuf-javascript 16.56 KiB for 4 files</title></circle>
+<circle cx="280" cy="238.6326171875" r="4" fill="#ff6361"><title>protobuf-javascript 17.71 KiB for 8 files</title></circle>
+<circle cx="420" cy="217.896484375" r="4" fill="#ff6361"><title>protobuf-javascript 24.86 KiB for 16 files</title></circle>
+<circle cx="560" cy="134.51015625000002" r="4" fill="#ff6361"><title>protobuf-javascript 53.62 KiB for 32 files</title></circle>
+</g>
+<g transform="translate(125, 30)">
+<g transform="translate(0, 0)">
+      <rect width="15" height="6" fill="#ffa600"/>
+      <text x="20" y="6">Protobuf-ES</text>
+    </g>
+<g transform="translate(0, 22)">
+      <rect width="15" height="6" fill="#ff6361"/>
+      <text x="20" y="6">protobuf-javascript</text>
+    </g>
+</g>
+</svg>

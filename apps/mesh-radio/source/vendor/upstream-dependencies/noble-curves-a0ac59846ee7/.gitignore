@@ -1,0 +1,11 @@
+node_modules
+/*.js
+/abstract
+/esm
+/cjs
+*.d.ts
+*.d.ts.map
+*.js.map
+*.tgz
+/test/build
+.vscode/settings.json

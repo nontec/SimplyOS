@@ -1,0 +1,12 @@
+#!/bin/bash -e
+
+npm run build
+
+(
+  cd dist
+  npm pack
+)
+
+./scripts/test-crc
+./scripts/test-multicoin-address-validator
+./tests/dependencies/test

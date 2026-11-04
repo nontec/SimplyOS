@@ -4,12 +4,14 @@
 
 Meshtastic JavaScript core 2.6.4, коммит 38ebaad3e2ab390801bc62ce859ef0ea0eba1b9b: GPLv3. Meshtastic Protobufs 2.7.0: GPLv3. MeshCore.js 1.15.0, коммит 1c142946f9597d60fc634afd9a681f546792b0d5: MIT.
 
+@bufbuild/protobuf распространяется по Apache-2.0 и BSD-3-Clause. Лицензии и полный исходный код зафиксированных версий зависимостей находятся в LICENSES и source/vendor/upstream-dependencies.
+
 Зависимости @bufbuild/protobuf, @noble/curves, @noble/hashes, crc, ste-simple-events и tslog сохраняют свои лицензии. Полные тексты лицензий поставляются в LICENSES. Точные версии и контрольные суммы — в source/package-lock.json и source/vendor/npm-sources/manifest.json.
 
 Полный соответствующий исходный код, включая код сборки и исходники протокольных библиотек:
 https://github.com/nontec/SimplyOS/tree/main/apps/mesh-radio
 
 Архив исходников того же выпуска:
-https://updatesios.nontec.ru/store/apps/ru.simplyos.mesh/2.0.0-source.zip
+https://updatesios.nontec.ru/store/apps/ru.simplyos.mesh/2.0.1-source.zip
 
 Собранный VPK не обращается к CDN и не скачивает протокольные библиотеки при запуске. Лицензия операционной системы не меняется из-за лицензии этого отдельного приложения.

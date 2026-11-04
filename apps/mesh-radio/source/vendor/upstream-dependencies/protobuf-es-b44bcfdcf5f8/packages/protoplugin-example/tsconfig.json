@@ -1,0 +1,10 @@
+{
+  "include": ["src/**/*.ts", "test/*.ts"],
+  "compilerOptions": {
+    "target": "es2017",
+    "moduleResolution": "Node10",
+    "resolveJsonModule": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}
