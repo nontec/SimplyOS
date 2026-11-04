@@ -1,6 +1,6 @@
-# SimplyOS SDK 0.1
+# SimplyOS SDK 0.2
 
-SDK для веб-приложений SimplyOS и веб-интерфейсов с локальным Python-компонентом. Требуется Python 3.10 или новее. CLI работает на Linux и Windows; системная установка приложений и реальные API проверяются на SimplyOS 26.11-Dev.5 или новее, App API 1.14.
+SDK для веб-приложений SimplyOS и веб-интерфейсов с локальным Python-компонентом. Требуется Python 3.10 или новее. CLI работает на Linux и Windows; системная установка приложений и реальные API проверяются на SimplyOS 26.11-Dev.6 или новее, App API 1.15.
 
 SDK не требует SimplyOS Studio. Распакуйте архив и запускайте:
 
@@ -66,24 +66,26 @@ Studio использует Code OSS/code-server, предоставляет т�
 
 ## Установка Studio и расширения
 
-Studio устанавливается из Магазина SimplyOS вместе с движком, SDK и Python-отладчиком. Рекомендуются 4 ГБ ОЗУ и не менее 3 ГБ свободного места с учётом инструментов и временных файлов установки. Обновите систему до 26.11-Dev.5, установите SimplyOS Studio и откройте его из меню приложений. Команды SDK находятся в палитре Ctrl+Shift+P: введите SimplyOS. Файлы и папки можно открыть через контекстное меню проводника и рабочего стола. Для запуска кода в незнакомой рабочей папке сначала подтвердите доверие через стандартный режим Workspace Trust; Studio не отключает эту проверку.
+Studio устанавливается из Магазина SimplyOS вместе с движком, SDK и Python-отладчиком. Рекомендуются 4 ГБ ОЗУ и не менее 3 ГБ свободного места с учётом инструментов и временных файлов установки. Обновите систему до 26.11-Dev.6, установите SimplyOS Studio и откройте его из меню приложений. Команды SDK находятся в палитре Ctrl+Shift+P: введите SimplyOS. Файлы и папки можно открыть через контекстное меню проводника и рабочего стола. Для запуска кода в незнакомой рабочей папке сначала подтвердите доверие через стандартный режим Workspace Trust; Studio не отключает эту проверку.
 
-Для другой IDE распакуйте SDK. В Code OSS/совместимом редакторе можно установить комплектный `nontec.simplyos-sdk-0.1.0.vsix` командой «Install from VSIX», затем указать `simplyos.sdkPath` и `simplyos.python`. Сам SDK не зависит от VSIX. Другие редакторы могут вызывать CLI как внешние задачи. Создание и редактирование кода не требуют доступа к облаку; первоначальная установка из магазина и загрузка дополнительных инструментов требуют сети.
+Для другой IDE распакуйте SDK. В Code OSS/совместимом редакторе можно установить комплектный `nontec.simplyos-sdk-0.2.0.vsix` командой «Install from VSIX», затем указать `simplyos.sdkPath` и `simplyos.python`. Сам SDK не зависит от VSIX. Другие редакторы могут вызывать CLI как внешние задачи. Создание и редактирование кода не требуют доступа к облаку; первоначальная установка из магазина и загрузка дополнительных инструментов требуют сети.
 
 
 ## Скачать SDK отдельно
 
-[Архив SimplyOS SDK 0.1.0](https://updatesios.nontec.ru/store/sdk/simplyos-sdk-0.1.0.zip)
+[Архив SimplyOS SDK 0.2.0](https://updatesios.nontec.ru/store/sdk/simplyos-sdk-0.2.0.zip)
 
-[Расширение для Code OSS и совместимых редакторов](https://updatesios.nontec.ru/store/sdk/nontec.simplyos-sdk-0.1.0.vsix)
+[Расширение для Code OSS и совместимых редакторов](https://updatesios.nontec.ru/store/sdk/nontec.simplyos-sdk-0.2.0.vsix)
 
-[Контрольные суммы](https://updatesios.nontec.ru/store/sdk/SHA256SUMS), [подпись контрольных сумм](https://updatesios.nontec.ru/store/sdk/SHA256SUMS.sig), [открытый ключ обновлений](update-signing-public.pem).
+[Контрольные суммы](https://updatesios.nontec.ru/store/sdk/SHA256SUMS-0.2.0), [подпись контрольных сумм](https://updatesios.nontec.ru/store/sdk/SHA256SUMS-0.2.0.sig), [открытый ключ обновлений](update-signing-public.pem).
 
 Сохраните оба файла контрольных сумм, открытый ключ и нужные архивы. Проверьте подпись и суммы:
 
 ```sh
-openssl dgst -sha256 -verify update-signing-public.pem -signature SHA256SUMS.sig SHA256SUMS
-sha256sum -c SHA256SUMS
+openssl dgst -sha256 -verify update-signing-public.pem -signature SHA256SUMS-0.2.0.sig SHA256SUMS-0.2.0
+sha256sum -c SHA256SUMS-0.2.0
 ```
 
 Открытый ключ проверяет подпись и не позволяет подписывать новые пакеты. Он отличается от ключа подписи ISO.
+
+[Универсальные API устройств и сети](UNIVERSAL-IO.md).

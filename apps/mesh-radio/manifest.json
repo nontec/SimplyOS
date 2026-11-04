@@ -1,0 +1,24 @@
+{
+  "format": "vole-app",
+  "formatVersion": 1,
+  "id": "ru.simplyos.mesh",
+  "name": "Mesh Радио",
+  "developer": "Карпухин Егор Константинович",
+  "appVersion": "2.0.0",
+  "entry": "index.html",
+  "icon": "icons/app.svg",
+  "permissions": [
+    "app.data.read",
+    "app.data.write",
+    "notifications.post",
+    "devices.serial.read",
+    "devices.serial.control",
+    "devices.bluetooth.read",
+    "devices.bluetooth.gatt",
+    "network.tcp",
+    "network.local",
+    "io.read"
+  ],
+  "license": "GPL-3.0-only",
+  "sourceUrl": "https://github.com/nontec/SimplyOS/tree/main/apps/mesh-radio"
+}

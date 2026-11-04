@@ -1,5 +1,5 @@
 {
-  "apiVersion": "1.14",
+  "apiVersion": "1.15",
   "channel": "simplyos-app-api",
   "backgroundServices": {
     "vpn": {
@@ -130,35 +130,51 @@
     },
     "mesh.devices.list": {
       "permission": "mesh.read",
-      "description": "USB/COM-порты и обнаруженные Bluetooth-устройства для Meshtastic и MeshCore"
+      "description": "USB/COM-порты и обнаруженные Bluetooth-устройства для Meshtastic и MeshCore",
+      "deprecated": true,
+      "replacement": "devices.serial.*, devices.bluetooth.gatt.*, network.tcp.*; протокол реализуется приложением"
     },
     "mesh.status": {
       "permission": "mesh.read",
-      "description": "Состояние подключения к радиоустройству"
+      "description": "Состояние подключения к радиоустройству",
+      "deprecated": true,
+      "replacement": "devices.serial.*, devices.bluetooth.gatt.*, network.tcp.*; протокол реализуется приложением"
     },
     "mesh.nodes": {
       "permission": "mesh.read",
-      "description": "Узлы Meshtastic или контакты MeshCore"
+      "description": "Узлы Meshtastic или контакты MeshCore",
+      "deprecated": true,
+      "replacement": "devices.serial.*, devices.bluetooth.gatt.*, network.tcp.*; протокол реализуется приложением"
     },
     "mesh.messages": {
       "permission": "mesh.read",
-      "description": "Входящие и исходящие сообщения текущего сеанса"
+      "description": "Входящие и исходящие сообщения текущего сеанса",
+      "deprecated": true,
+      "replacement": "devices.serial.*, devices.bluetooth.gatt.*, network.tcp.*; протокол реализуется приложением"
     },
     "mesh.connect": {
       "permission": "mesh.control",
-      "description": "Подключение по USB/COM, Bluetooth или локальному IP"
+      "description": "Подключение по USB/COM, Bluetooth или локальному IP",
+      "deprecated": true,
+      "replacement": "devices.serial.*, devices.bluetooth.gatt.*, network.tcp.*; протокол реализуется приложением"
     },
     "mesh.disconnect": {
       "permission": "mesh.control",
-      "description": "Отключение радиоустройства"
+      "description": "Отключение радиоустройства",
+      "deprecated": true,
+      "replacement": "devices.serial.*, devices.bluetooth.gatt.*, network.tcp.*; протокол реализуется приложением"
     },
     "mesh.send": {
       "permission": "mesh.control",
-      "description": "Отправка текста узлу, контакту или в канал"
+      "description": "Отправка текста узлу, контакту или в канал",
+      "deprecated": true,
+      "replacement": "devices.serial.*, devices.bluetooth.gatt.*, network.tcp.*; протокол реализуется приложением"
     },
     "mesh.configure": {
       "permission": "mesh.control",
-      "description": "Изменение ограниченного набора настроек радиоустройства"
+      "description": "Изменение ограниченного набора настроек радиоустройства",
+      "deprecated": true,
+      "replacement": "devices.serial.*, devices.bluetooth.gatt.*, network.tcp.*; протокол реализуется приложением"
     },
     "printing.printers.list": {
       "permission": "printing.read",
@@ -216,6 +232,200 @@
       "officialOnly": true,
       "appId": "ru.simplyos.studio",
       "executionPrivilege": "user"
+    },
+    "devices.serial.list": {
+      "permission": "devices.serial.read",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: devices.serial.list"
+    },
+    "devices.serial.open": {
+      "permission": "devices.serial.control",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: devices.serial.open"
+    },
+    "devices.serial.read": {
+      "permission": "devices.serial.control",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: devices.serial.read"
+    },
+    "devices.serial.write": {
+      "permission": "devices.serial.control",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: devices.serial.write"
+    },
+    "devices.serial.signals": {
+      "permission": "devices.serial.control",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: devices.serial.signals"
+    },
+    "devices.serial.close": {
+      "permission": "devices.serial.control",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: devices.serial.close"
+    },
+    "devices.bluetooth.scan": {
+      "permission": "devices.bluetooth.read",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: devices.bluetooth.scan"
+    },
+    "devices.bluetooth.gatt.open": {
+      "permission": "devices.bluetooth.gatt",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: devices.bluetooth.gatt.open"
+    },
+    "devices.bluetooth.gatt.services": {
+      "permission": "devices.bluetooth.gatt",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: devices.bluetooth.gatt.services"
+    },
+    "devices.bluetooth.gatt.read": {
+      "permission": "devices.bluetooth.gatt",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: devices.bluetooth.gatt.read"
+    },
+    "devices.bluetooth.gatt.write": {
+      "permission": "devices.bluetooth.gatt",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: devices.bluetooth.gatt.write"
+    },
+    "devices.bluetooth.gatt.subscribe": {
+      "permission": "devices.bluetooth.gatt",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: devices.bluetooth.gatt.subscribe"
+    },
+    "devices.bluetooth.gatt.unsubscribe": {
+      "permission": "devices.bluetooth.gatt",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: devices.bluetooth.gatt.unsubscribe"
+    },
+    "devices.bluetooth.gatt.events": {
+      "permission": "devices.bluetooth.gatt",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: devices.bluetooth.gatt.events"
+    },
+    "devices.bluetooth.gatt.close": {
+      "permission": "devices.bluetooth.gatt",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: devices.bluetooth.gatt.close"
+    },
+    "devices.usb.enumerate": {
+      "permission": "devices.usb.read",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: devices.usb.enumerate"
+    },
+    "devices.usb.open": {
+      "permission": "devices.usb.control",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: devices.usb.open"
+    },
+    "devices.usb.claim": {
+      "permission": "devices.usb.control",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: devices.usb.claim"
+    },
+    "devices.usb.release": {
+      "permission": "devices.usb.control",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: devices.usb.release"
+    },
+    "devices.usb.transferIn": {
+      "permission": "devices.usb.control",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: devices.usb.transferIn"
+    },
+    "devices.usb.transferOut": {
+      "permission": "devices.usb.control",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: devices.usb.transferOut"
+    },
+    "devices.usb.controlTransfer": {
+      "permission": "devices.usb.control",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: devices.usb.controlTransfer"
+    },
+    "devices.usb.close": {
+      "permission": "devices.usb.control",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: devices.usb.close"
+    },
+    "network.tcp.open": {
+      "permission": "network.tcp",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: network.tcp.open"
+    },
+    "network.tcp.read": {
+      "permission": "network.tcp",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: network.tcp.read"
+    },
+    "network.tcp.write": {
+      "permission": "network.tcp",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: network.tcp.write"
+    },
+    "network.tcp.close": {
+      "permission": "network.tcp",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: network.tcp.close"
+    },
+    "network.udp.open": {
+      "permission": "network.udp",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: network.udp.open"
+    },
+    "network.udp.send": {
+      "permission": "network.udp",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: network.udp.send"
+    },
+    "network.udp.receive": {
+      "permission": "network.udp",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: network.udp.receive"
+    },
+    "network.udp.close": {
+      "permission": "network.udp",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: network.udp.close"
+    },
+    "network.websocket.open": {
+      "permission": "network.websocket",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: network.websocket.open"
+    },
+    "network.websocket.send": {
+      "permission": "network.websocket",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: network.websocket.send"
+    },
+    "network.websocket.receive": {
+      "permission": "network.websocket",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: network.websocket.receive"
+    },
+    "network.websocket.close": {
+      "permission": "network.websocket",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: network.websocket.close"
+    },
+    "io.status": {
+      "permission": "io.read",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: io.status"
+    },
+    "io.close": {
+      "permission": "io.read",
+      "transport": true,
+      "description": "Универсальный ввод-вывод: io.close"
+    },
+    "network.local.info": {
+      "permission": "network.local",
+      "description": "Интерфейсы и адреса локальной сети без секретов Wi-Fi"
+    },
+    "io.events": {
+      "permission": "io.read",
+      "transport": true,
+      "description": "События подключения и отключения собственного канала"
     }
   }
 }

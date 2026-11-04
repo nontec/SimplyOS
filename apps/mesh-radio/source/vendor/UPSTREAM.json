@@ -1,0 +1,12 @@
+{
+  "meshtastic-js": {
+    "repository": "https://github.com/meshtastic/js",
+    "commit": "38ebaad3e2ab390801bc62ce859ef0ea0eba1b9b",
+    "coreVersion": "2.6.4"
+  },
+  "meshcore-js": {
+    "repository": "https://github.com/meshcore-dev/meshcore.js",
+    "commit": "1c142946f9597d60fc634afd9a681f546792b0d5",
+    "version": "1.15.0"
+  }
+}
