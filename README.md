@@ -33,3 +33,5 @@ SimplyOS — операционная система для персональн
 [Универсальные API устройств и сети](docs/UNIVERSAL-IO.md) · [Исходники Mesh Радио (GPLv3)](apps/mesh-radio)
 
 [Серверы обновлений, Магазина и зеркала пакетов](docs/DISTRIBUTION-MIRRORS.md).
+
+Основной сайт: [simplyos.ru](https://simplyos.ru/). [История обновлений](https://simplyos.ru/#updates) · [Дорожная карта](https://simplyos.ru/#roadmap).
