@@ -41,3 +41,5 @@ SimplyOS — операционная система для персональн
 [Серверы обновлений, Магазина и зеркала пакетов](docs/DISTRIBUTION-MIRRORS.md).
 
 Основной сайт: [simplyos.ru](https://simplyos.ru/). [История обновлений](https://simplyos.ru/#updates) · [Дорожная карта](https://simplyos.ru/#roadmap).
+
+[Системные звуки и будильники](docs/SYSTEM-SOUNDS-AND-ALARMS.md) · [Персонализация](docs/PERSONALIZATION.md).
