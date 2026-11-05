@@ -23,7 +23,7 @@ SimplyOS — операционная система для персональн
 
 Установочный образ и сведения о SimplyOS доступны на [официальном сайте](https://nontec.ru/). Для установки через текущий образ требуется подключение к интернету. После установки обновления ОС доступны через Центр обновлений: канал Release содержит основные выпуски, канал Dev предназначен для предварительной проверки изменений.
 
-Актуальный установочный образ: [26.11-Release.15, x86-64](https://updatesios.nontec.ru/iso/SimplyOS-26.11-Release.15-amd64.iso). Поддерживаются UEFI и BIOS; в виртуальных машинах включать 3D-ускорение не требуется. В UEFI доступны Secure Boot и установка рядом с другой ОС в заранее подготовленное неразмеченное место GPT-диска. [Условия и инструкция](docs/INSTALLATION.md). [Контрольная сумма](https://updatesios.nontec.ru/iso/SimplyOS-26.11-Release.15-amd64.iso.sha256) и [подпись](https://updatesios.nontec.ru/iso/SimplyOS-26.11-Release.15-amd64.iso.sha256.sig).
+Актуальный установочный образ: [26.11-Release.16, x86-64](https://updatesios.nontec.ru/iso/SimplyOS-26.11-Release.16-amd64.iso). Поддерживаются UEFI и BIOS; в виртуальных машинах включать 3D-ускорение не требуется. В UEFI доступны Secure Boot и установка рядом с другой ОС в свободную область GPT-диска или с уменьшением подходящего NTFS/ext4-раздела. [Условия и инструкция](docs/INSTALLATION.md). [Контрольная сумма](https://updatesios.nontec.ru/iso/SimplyOS-26.11-Release.16-amd64.iso.sha256) и [подпись](https://updatesios.nontec.ru/iso/SimplyOS-26.11-Release.16-amd64.iso.sha256.sig).
 
 ## О репозитории
 
