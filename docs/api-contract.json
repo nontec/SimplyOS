@@ -1,5 +1,5 @@
 {
-  "apiVersion": "1.15",
+  "apiVersion": "1.16",
   "channel": "simplyos-app-api",
   "backgroundServices": {
     "vpn": {
@@ -426,6 +426,18 @@
       "permission": "io.read",
       "transport": true,
       "description": "События подключения и отключения собственного канала"
+    },
+    "media.session.update": {
+      "permission": "media.session",
+      "description": "Создать или обновить медиасессию текущего окна приложения"
+    },
+    "media.session.clear": {
+      "permission": "media.session",
+      "description": "Удалить медиасессию текущего окна приложения"
+    },
+    "media.session.actions": {
+      "permission": "media.session",
+      "description": "Получить и удалить из очереди команды пользователя для медиасессии текущего окна"
     }
   }
 }

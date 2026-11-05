@@ -73,7 +73,7 @@ Studio устанавливается из Магазина SimplyOS вмест�
 
 ## Скачать SDK отдельно
 
-[Архив SimplyOS SDK 0.2.0](https://simplyos.ru/market/sdk/simplyos-sdk-0.2.0.zip)
+[Архив SimplyOS SDK 0.2.0](https://simplyos.ru/market/sdk/simplyos-sdk-0.2.1.zip)
 
 [Расширение для Code OSS и совместимых редакторов](https://simplyos.ru/market/sdk/nontec.simplyos-sdk-0.2.0.vsix)
 
@@ -91,3 +91,5 @@ sha256sum -c SHA256SUMS-0.2.0
 [Универсальные API устройств и сети](UNIVERSAL-IO.md).
 
 Резервный сервер SDK: `https://updatesios.nontec.ru/store/sdk/`. [Серверы и зеркала](DISTRIBUTION-MIRRORS.md).
+
+Studio 0.2.1 включает SDK с контрактом App API 1.16 и разрешением media.session. Для этой версии требуется SimplyOS 26.11-Dev.10 или новее. [Самостоятельный SDK 0.2.1](https://simplyos.ru/market/sdk/simplyos-sdk-0.2.1.zip), [контрольная сумма](https://simplyos.ru/market/sdk/SDK-0.2.1-SHA256SUMS) и [подпись](https://simplyos.ru/market/sdk/SDK-0.2.1-SHA256SUMS.sig).
