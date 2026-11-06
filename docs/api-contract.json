@@ -1,5 +1,5 @@
 {
-  "apiVersion": "1.17",
+  "apiVersion": "1.18",
   "channel": "simplyos-app-api",
   "backgroundServices": {
     "vpn": {
@@ -450,6 +450,18 @@
     "media.capture.configure": {
       "permission": "media.capture",
       "description": "Включение или выключение уже разрешённых дорожек своего сеанса захвата"
+    },
+    "media.call.open": {
+      "permission": "media.call",
+      "description": "Показ удалённого медиа-потока в системном мини-окне при сворачивании приложения"
+    },
+    "media.call.update": {
+      "permission": "media.call",
+      "description": "Обновление состояния удалённой камеры собственного звонка"
+    },
+    "media.call.close": {
+      "permission": "media.call",
+      "description": "Закрытие собственного мини-окна звонка"
     }
   }
 }
