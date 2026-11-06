@@ -1,5 +1,5 @@
 {
-  "apiVersion": "1.16",
+  "apiVersion": "1.17",
   "channel": "simplyos-app-api",
   "backgroundServices": {
     "vpn": {
@@ -438,6 +438,18 @@
     "media.session.actions": {
       "permission": "media.session",
       "description": "Получить и удалить из очереди команды пользователя для медиасессии текущего окна"
+    },
+    "background.window.set": {
+      "permission": "background.window",
+      "description": "Сохранить своё окно в трее при закрытии, без запуска отдельной системной службы"
+    },
+    "background.window.status": {
+      "permission": "background.window",
+      "description": "Состояние фонового окна своего приложения"
+    },
+    "media.capture.configure": {
+      "permission": "media.capture",
+      "description": "Включение или выключение уже разрешённых дорожек своего сеанса захвата"
     }
   }
 }
