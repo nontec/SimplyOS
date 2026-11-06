@@ -1,5 +1,5 @@
 {
-  "apiVersion": "1.18",
+  "apiVersion": "1.19",
   "channel": "simplyos-app-api",
   "backgroundServices": {
     "vpn": {
@@ -462,6 +462,30 @@
     "media.call.close": {
       "permission": "media.call",
       "description": "Закрытие собственного мини-окна звонка"
+    },
+    "devices.storage.list": {
+      "permission": "devices.storage.read",
+      "description": "Съёмные тома и их идентификаторы"
+    },
+    "devices.storage.mount": {
+      "permission": "devices.storage.manage",
+      "description": "Подключение выбранного тома с подтверждением"
+    },
+    "devices.storage.unmount": {
+      "permission": "devices.storage.manage",
+      "description": "Безопасное отключение выбранного тома"
+    },
+    "devices.storage.format": {
+      "permission": "devices.storage.manage",
+      "description": "Форматирование съёмного тома с подтверждением администратора"
+    },
+    "devices.storage.setLabel": {
+      "permission": "devices.storage.manage",
+      "description": "Название съёмного тома с подтверждением администратора"
+    },
+    "devices.storage.job": {
+      "permission": "devices.storage.read",
+      "description": "Прогресс собственного задания управления накопителем"
     }
   }
 }

@@ -47,3 +47,5 @@ SimplyOS — операционная система для персональн
 [Электропитание и гашение экрана](docs/POWER-AND-DISPLAY.md) · [Обновление состояния и быстродействие](docs/PERFORMANCE.md).
 
 [Защита загрузки и откат из GRUB](docs/BOOT-RECOVERY.md) · [Диагностика и устранение неполадок](docs/DIAGNOSTICS.md).
+
+[Накопители и API устройств](docs/STORAGE.md) · [Автоматические точки восстановления](docs/RECOVERY-POLICY.md).
