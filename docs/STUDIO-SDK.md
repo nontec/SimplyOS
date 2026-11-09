@@ -1,6 +1,6 @@
-# SimplyOS SDK 0.2
+# SimplyOS Studio и SDK
 
-SDK для веб-приложений SimplyOS и веб-интерфейсов с локальным Python-компонентом. Требуется Python 3.10 или новее. CLI работает на Linux и Windows; системная установка приложений и реальные API проверяются на SimplyOS 26.11-Dev.6 или новее, App API 1.15.
+SDK для веб-приложений SimplyOS и веб-интерфейсов с локальным Python-компонентом. Требуется Python 3.10 или новее; CLI работает на Linux и Windows. Опубликованы Studio 0.2.1 и архив SDK 0.2.1; текущая ОС — Release.26 / App API 1.19. Поставляемый отдельно SDK содержит более ранний контракт 1.16: [различия версий и порядок обновления](#совместимость-sdk-и-api). Реальные системные функции проверяются на SimplyOS, а не только в локальном режиме разработки.
 
 SDK не требует SimplyOS Studio. Распакуйте архив и запускайте:
 
@@ -73,23 +73,21 @@ Studio устанавливается из Магазина SimplyOS вмест�
 
 ## Скачать SDK отдельно
 
-[Архив SimplyOS SDK 0.2.0](https://simplyos.ru/market/sdk/simplyos-sdk-0.2.1.zip)
-
-[Расширение для Code OSS и совместимых редакторов](https://simplyos.ru/market/sdk/nontec.simplyos-sdk-0.2.0.vsix)
-
-[Контрольные суммы](https://simplyos.ru/market/sdk/SHA256SUMS-0.2.0), [подпись контрольных сумм](https://simplyos.ru/market/sdk/SHA256SUMS-0.2.0.sig), [открытый ключ обновлений](update-signing-public.pem).
-
-Сохраните оба файла контрольных сумм, открытый ключ и нужные архивы. Проверьте подпись и суммы:
+Опубликованный архив — [SimplyOS SDK 0.2.1](https://simplyos.ru/market/sdk/simplyos-sdk-0.2.1.zip). Его [контрольная сумма](https://simplyos.ru/market/sdk/SDK-0.2.1-SHA256SUMS) и [подпись](https://simplyos.ru/market/sdk/SDK-0.2.1-SHA256SUMS.sig) относятся именно к этому архиву.
 
 ```sh
-openssl dgst -sha256 -verify update-signing-public.pem -signature SHA256SUMS-0.2.0.sig SHA256SUMS-0.2.0
-sha256sum -c SHA256SUMS-0.2.0
+openssl dgst -sha256 -verify update-signing-public.pem -signature SDK-0.2.1-SHA256SUMS.sig SDK-0.2.1-SHA256SUMS
+sha256sum -c SDK-0.2.1-SHA256SUMS
 ```
 
-Открытый ключ проверяет подпись и не позволяет подписывать новые пакеты. Он отличается от ключа подписи ISO.
-
-[Универсальные API устройств и сети](UNIVERSAL-IO.md).
+Расширение редактора выпускается отдельно: [nontec.simplyos-sdk-0.2.0.vsix](https://simplyos.ru/market/sdk/nontec.simplyos-sdk-0.2.0.vsix), [его список сумм](https://simplyos.ru/market/sdk/SHA256SUMS-0.2.0) и [подпись списка](https://simplyos.ru/market/sdk/SHA256SUMS-0.2.0.sig). Номер расширения и номер SDK могут различаться; не проверяйте ZIP 0.2.1 по списку для 0.2.0. [Открытый ключ](update-signing-public.pem) проверяет подписи, но не позволяет подписывать пакеты. Ключ ISO — другой.
 
 Резервный сервер SDK: `https://updatesios.nontec.ru/store/sdk/`. [Серверы и зеркала](DISTRIBUTION-MIRRORS.md).
 
-Studio 0.2.1 включает SDK с контрактом App API 1.16 и разрешением media.session. Для этой версии требуется SimplyOS 26.11-Dev.10 или новее. [Самостоятельный SDK 0.2.1](https://simplyos.ru/market/sdk/simplyos-sdk-0.2.1.zip), [контрольная сумма](https://simplyos.ru/market/sdk/SDK-0.2.1-SHA256SUMS) и [подпись](https://simplyos.ru/market/sdk/SDK-0.2.1-SHA256SUMS.sig).
+## Совместимость SDK и API
+
+На 9 ноября 2026 года Магазин публикует Studio 0.2.1; архив SDK 0.2.1 содержит контракт App API 1.16 с 91 методом. Текущая ОС Release.26 предоставляет API 1.19 со 103 методами. Рабочее дерево SDK уже содержит более новый контракт, но оно не тождественно опубликованному ZIP. Версия CLI/IDE, версия API и версия ОС — разные величины.
+
+Для использования методов 1.17–1.19 сверяйтесь с [актуальным руководством](API.md). В локальной копии распакованного SDK можно обновить `api-contract.json` и `simplyos.d.ts` из этой документации, а также типы уже созданного проекта. Валидатор CLI читает контракт из корня SDK. Это обновляет перечень методов/прав и типы, но не добавляет реализацию в ОС и не эмулирует реальные устройства. Проверяйте новые функции на SimplyOS с подходящей версией API; наличие методов уточняйте через `system.api.info`. Манифест должен указывать соответствующие минимальные требования.
+
+Studio 0.2.1 требует SimplyOS 26.11-Dev.10 или более новую систему; эта поддержка уже включена в текущий Release. SDK работает и без Studio, в другом редакторе. [Универсальные API устройств и сети](UNIVERSAL-IO.md).
