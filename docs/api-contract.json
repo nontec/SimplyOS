@@ -1,5 +1,5 @@
 {
-  "apiVersion": "1.19",
+  "apiVersion": "1.20",
   "channel": "simplyos-app-api",
   "backgroundServices": {
     "vpn": {
@@ -486,6 +486,81 @@
     "devices.storage.job": {
       "permission": "devices.storage.read",
       "description": "Прогресс собственного задания управления накопителем"
+    },
+    "devices.companion.status": {
+      "permission": "devices.companion.read",
+      "description": "Состояние локального адаптера сопряжённых устройств",
+      "companion": true
+    },
+    "devices.companion.list": {
+      "permission": "devices.companion.read",
+      "description": "Известные сопряжённые и доступные устройства",
+      "companion": true
+    },
+    "devices.companion.device": {
+      "permission": "devices.companion.read",
+      "description": "Состояние, возможности и заряд выбранного устройства",
+      "companion": true
+    },
+    "devices.companion.discover": {
+      "permission": "devices.companion.pair",
+      "description": "Обнаружение устройств после подтверждения",
+      "companion": true
+    },
+    "devices.companion.pair": {
+      "permission": "devices.companion.pair",
+      "description": "Сопряжение с подтверждением на обоих устройствах",
+      "companion": true
+    },
+    "devices.companion.unpair": {
+      "permission": "devices.companion.pair",
+      "description": "Отмена сопряжения выбранного устройства",
+      "companion": true
+    },
+    "devices.companion.ring": {
+      "permission": "devices.companion.control",
+      "description": "Звуковой поиск телефона",
+      "companion": true
+    },
+    "devices.companion.shareText": {
+      "permission": "devices.companion.share",
+      "description": "Передача текста после подтверждения",
+      "companion": true
+    },
+    "devices.companion.shareUrl": {
+      "permission": "devices.companion.share",
+      "description": "Передача HTTP/HTTPS-ссылки после подтверждения",
+      "companion": true
+    },
+    "devices.companion.shareFile": {
+      "permission": "devices.companion.share",
+      "description": "Передача файла только после системного выбора",
+      "companion": true
+    },
+    "devices.companion.notifications.list": {
+      "permission": "devices.companion.notifications.read",
+      "description": "Снимок уведомлений с отдельным согласием",
+      "companion": true
+    },
+    "devices.companion.notifications.reply": {
+      "permission": "devices.companion.notifications.control",
+      "description": "Подтверждаемый ответ на уведомление",
+      "companion": true
+    },
+    "devices.companion.notifications.dismiss": {
+      "permission": "devices.companion.notifications.control",
+      "description": "Подтверждаемое скрытие уведомления",
+      "companion": true
+    },
+    "devices.companion.sms.conversations": {
+      "permission": "devices.companion.sms.read",
+      "description": "Снимок последних SMS-диалогов с отдельным согласием",
+      "companion": true
+    },
+    "devices.companion.sms.send": {
+      "permission": "devices.companion.sms.send",
+      "description": "Подтверждаемая отправка SMS с номером и текстом",
+      "companion": true
     }
   }
 }
