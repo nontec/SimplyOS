@@ -1,0 +1,13 @@
+{
+  "format": "vole-app",
+  "formatVersion": 1,
+  "id": "ru.simplyos.vault",
+  "name": "Менеджер паролей",
+  "developer": "Карпухин Егор Константинович",
+  "appVersion": "1.0.1",
+  "entry": "index.html",
+  "icon": "icons/app.svg",
+  "permissions": [
+    "vault.local"
+  ]
+}

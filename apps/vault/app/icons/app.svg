@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <title>Менеджер паролей</title>
+  <defs><linearGradient id="tile" x2="1" y2="1"><stop stop-color="#287c6b"/><stop offset="1" stop-color="#176052"/></linearGradient></defs>
+  <rect x="4" y="4" width="120" height="120" rx="28" fill="url(#tile)"/>
+  <path d="M45 57V45a19 19 0 0 1 38 0v12" fill="none" stroke="#fff" stroke-width="8"/><rect x="35" y="53" width="58" height="47" rx="10" fill="#fff"/><circle cx="64" cy="72" r="6" fill="#206f60"/><path d="M64 74v11" stroke="#206f60" stroke-width="5" stroke-linecap="round"/>
+</svg>

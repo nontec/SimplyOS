@@ -1,0 +1,8 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Менеджер паролей</title><link rel="stylesheet" href="style.css"><script src="app.js" defer></script></head>
+<body><main><header><img src="icons/app.svg" alt=""><h1>Менеджер паролей</h1></header>
+<div class="actions"><button class="primary" id="open">Открыть KDBX</button><button id="create">Создать KDBX</button><button id="add" hidden>Добавить запись</button><button id="lock" hidden>Заблокировать</button></div>
+<p id="status" role="status">Выберите локальное хранилище KeePass.</p>
+<section id="vault" hidden aria-label="Записи хранилища"><label>Поиск по названию<input id="query" type="search"></label>
+<ul id="entries"></ul></section></main></body></html>
